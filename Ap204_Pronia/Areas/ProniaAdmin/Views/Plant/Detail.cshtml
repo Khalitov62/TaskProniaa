@@ -1,0 +1,48 @@
+﻿@model Plant
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<table class="table table-primary">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col">SKUCode</th>
+            <th scope="col">Shipping</th>
+            <th scope="col">Request</th>
+            <th scope="col">Another Image</th>
+            <th scope="col">Main Image</th>
+            <th scope="col">PlantCategories</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.Name</td>
+            <td>@Model.Price</td>
+            <td>@Model.Description</td>
+            <td>@Model.SKUCode</td>
+            <td>@Model.Shipping</td>
+            <td>@Model.Request</td>
+            <td>
+                <div class="d-fex">
+                    @foreach (var img in Model.PlantImages.Where(i => i.IsMain == false))
+                    {
+                        <div class="col-lg-2">
+                            <img style=" width:150px; height:90px;" src="~/assets/images/website-images/@img.ImagePath" />
+
+                        </div>
+                    }
+                </div>
+            </td>
+            <td>
+               <img style=" width:150px; height:90px;" src="~/assets/images/website-images/@Model.PlantImages.FirstOrDefault(i=>i.IsMain==true).ImagePath"/>
+            </td>
+        </tr>
+    </tbody>
+</table>
