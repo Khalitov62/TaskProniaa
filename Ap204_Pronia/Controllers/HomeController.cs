@@ -34,6 +34,11 @@ namespace Ap204_Pronia.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> Partial()
+        {
+            List<Plant> plants = await _context.Plants.Include(p => p.PlantImages).ToListAsync();
+            return PartialView("_ProductPartialView", plants);
+        }
 
     }
 }

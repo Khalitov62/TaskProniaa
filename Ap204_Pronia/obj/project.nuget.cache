@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MrTOm1LvD5oIaFr0/CMTXcJTh9roIGVlYdhhUd9obOil+n4e/9tp35sJ6y5YDEwPgCHeDxOne/9Q71KnF4vMGw==",
+  "dgSpecHash": "lZuxeh2td20ZedTCL9ruCQIIE0aMQSOtXm7PC5JTj5sFGzLB55GkoMgbDDlL9h+6He7SiKiOPSWKJRk5BvA+AA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\OneDrive\\Masaüstü\\Task\\Ap204_Pronia\\Pronia.csproj",
+  "projectFilePath": "C:\\Users\\user\\OneDrive\\Masaüstü\\TruePronia\\Ap204_Pronia\\Pronia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

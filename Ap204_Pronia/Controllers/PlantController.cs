@@ -34,12 +34,16 @@ namespace Ap204_Pronia.Controllers
                     Count = 1
                 };
                 basket.BasketItemVMs.Add(item);
+                basket.TotalPrice = item.Plant.Price;
+                basket.Count = 1;
                 itemStr = JsonConvert.SerializeObject(basket);
+
 
             }
             else
             {
                 basket = JsonConvert.DeserializeObject<BasketVM>(basketStr);
+
                 BasketItemVM existedItem = basket.BasketItemVMs.FirstOrDefault(i=> i.Plant.Id == id);
                 if (existedItem == null)
                 {
@@ -54,7 +58,13 @@ namespace Ap204_Pronia.Controllers
                 {
                     existedItem.Count++;
                 }
-
+                decimal total = default;
+                foreach (BasketItemVM item in basket.BasketItemVMs)
+                {
+                    total += item.Plant.Price * item.Count;
+                }
+                basket.TotalPrice = total;
+                basket.Count = basket.BasketItemVMs.Count;
                 itemStr = JsonConvert.SerializeObject(basket);
 
             }
